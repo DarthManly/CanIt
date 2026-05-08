@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CanIt 是一个以投票为数据来源的 AI 商业应用能力星图，用三维行业球体展示 AI 在不同行业和任务中的可用程度。"
+    />
+    <title>CanIt · AI 应用星际榜单</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="cosmos" aria-hidden="true">
+      <div class="nebula nebula-a"></div>
+      <div class="nebula nebula-b"></div>
+      <div class="starfield starfield-one"></div>
+      <div class="starfield starfield-two"></div>
+      <div class="grid-horizon"></div>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="CanIt 首页">
+        <span class="brand-mark">CI</span>
+        <span>
+          <strong>CanIt</strong>
+          <small>AI in Practice Arena</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#arena">星图</a>
+        <a href="#leaderboard">榜单</a>
+        <a href="#method">投票机制</a>
+        <a href="#taxonomy">行业层级</a>
+      </nav>
+      <button class="ghost-button">提交应用</button>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="pulse-dot"></span>
+            众包投票驱动的 AI 商业能力雷达
+          </div>
+          <h1 id="hero-title">把商业世界映射成一颗会发光的 AI 能力星球。</h1>
+          <p class="hero-lede">
+            CanIt 用行业层级、真实应用案例和社区投票，把 AI 在各个商业场景中的能力进展以渐变星图呈现：能做、部分能做、暂时不能做，都保留前沿的不确定性。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#arena">探索行业星球</a>
+            <a class="secondary-button" href="#method">了解评分方式</a>
+          </div>
+          <div class="signal-row" aria-label="平台关键指标">
+            <div>
+              <strong>4</strong>
+              <span>级行业图谱</span>
+            </div>
+            <div>
+              <strong>12k+</strong>
+              <span>社区投票</span>
+            </div>
+            <div>
+              <strong>0→100</strong>
+              <span>能力置信度</span>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="AI 能力状态示例">
+          <div class="panel-orbit"></div>
+          <div class="metric-card metric-card-hot">
+            <span>高可用</span>
+            <strong>营销内容生成</strong>
+            <em>88% confidence</em>
+          </div>
+          <div class="metric-card metric-card-mid">
+            <span>探索中</span>
+            <strong>工业质检决策</strong>
+            <em>56% confidence</em>
+          </div>
+          <div class="metric-card metric-card-low">
+            <span>待突破</span>
+            <strong>全自动审计签证</strong>
+            <em>24% confidence</em>
+          </div>
+        </aside>
+      </section>
+
+      <section id="arena" class="arena-section" aria-labelledby="arena-title">
+        <div class="section-heading">
+          <span class="section-kicker">3D INDUSTRY SPHERE</span>
+          <h2 id="arena-title">行业能力球体</h2>
+          <p>
+            每个光点代表一个四级行业 / 任务场景。颜色越接近青紫，AI 越成熟；越接近琥珀和红色，说明仍处在人工主导或高不确定状态。
+          </p>
+        </div>
+        <div class="arena-layout">
+          <div class="sphere-shell">
+            <canvas id="industrySphere" width="920" height="720" aria-label="AI 商业应用行业三维球体"></canvas>
+            <div class="sphere-core">
+              <strong>CanIt</strong>
+              <span>Capability Atlas</span>
+            </div>
+          </div>
+          <div class="insight-panel" id="industryDetail" aria-live="polite">
+            <span class="detail-label">当前选中</span>
+            <h3>金融服务 · 零售银行 · 风控 · 反欺诈预警</h3>
+            <p>
+              社区认为该场景已经能稳定辅助分析，但最终决策仍需要合规与人工复核。投票分布呈现“可用但边界模糊”的渐变状态。
+            </p>
+            <div class="confidence-meter" aria-label="能力置信度 74%">
+              <span style="width: 74%"></span>
+            </div>
+            <dl class="detail-stats">
+              <div><dt>能力分</dt><dd>74</dd></div>
+              <div><dt>投票数</dt><dd>1,284</dd></div>
+              <div><dt>趋势</dt><dd>+12%</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="leaderboard" class="leaderboard-section" aria-labelledby="leaderboard-title">
+        <div class="section-heading compact">
+          <span class="section-kicker">LIVE RANKING</span>
+          <h2 id="leaderboard-title">AI 应用能力榜</h2>
+        </div>
+        <div class="leaderboard-grid">
+          <article class="rank-card top-rank">
+            <span class="rank-number">01</span>
+            <h3>客户服务 · 智能坐席</h3>
+            <p>在高频、标准化、可回溯的商业流程中表现最成熟。</p>
+            <div class="rank-score">92</div>
+          </article>
+          <article class="rank-card">
+            <span class="rank-number">02</span>
+            <h3>软件研发 · 代码生成</h3>
+            <p>能显著提升开发效率，但复杂系统设计仍依赖专家。</p>
+            <div class="rank-score">87</div>
+          </article>
+          <article class="rank-card">
+            <span class="rank-number">03</span>
+            <h3>市场营销 · 创意内容</h3>
+            <p>文案、视觉、A/B 方案均具备较强可落地性。</p>
+            <div class="rank-score">84</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="method" class="method-section" aria-labelledby="method-title">
+        <div class="section-heading compact">
+          <span class="section-kicker">VOTE TO MAP THE FRONTIER</span>
+          <h2 id="method-title">用投票捕捉“模糊边界”</h2>
+        </div>
+        <div class="method-grid">
+          <div class="method-card">
+            <span>01</span>
+            <h3>场景拆解</h3>
+            <p>把一级到四级行业映射为可评价的业务任务，例如“医疗健康 / 医院 / 影像科 / 初筛辅助”。</p>
+          </div>
+          <div class="method-card">
+            <span>02</span>
+            <h3>社区投票</h3>
+            <p>用户从“不能做、辅助做、基本能做、超越人工”中投票，并补充真实应用证据。</p>
+          </div>
+          <div class="method-card">
+            <span>03</span>
+            <h3>渐变表达</h3>
+            <p>最终结果不硬切边界，而是用置信区间、投票分歧和趋势方向生成连续颜色。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="taxonomy" class="taxonomy-section" aria-labelledby="taxonomy-title">
+        <div class="section-heading compact">
+          <span class="section-kicker">FOUR-LEVEL BUSINESS MAP</span>
+          <h2 id="taxonomy-title">覆盖商业世界的多级行业骨架</h2>
+          <p>示例结构可继续扩展到更完整的国民经济行业分类、职业任务库和企业流程库。</p>
+        </div>
+        <div class="taxonomy-map" id="taxonomyMap"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>CanIt · AI 能力边界不是线，而是一片正在移动的星云。</span>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
