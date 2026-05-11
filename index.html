@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="CanIt 是一个以投票为数据来源的 AI 商业应用能力星图，用三维行业球体展示 AI 在不同行业和任务中的可用程度。"
+      content="CanIt 是一个以投票为数据来源的 AI 商业应用能力立方体，用行业、产品、价值链三维立方体展示 AI 在商业应用格子中的可用程度。"
     />
     <title>CanIt · AI 应用星际榜单</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="cosmos" aria-hidden="true">
@@ -34,7 +34,7 @@
         </span>
       </a>
       <nav class="nav-links" aria-label="主导航">
-        <a href="#arena">星图</a>
+        <a href="#arena">立方体</a>
         <a href="#leaderboard">榜单</a>
         <a href="#method">投票机制</a>
         <a href="#taxonomy">行业层级</a>
@@ -49,12 +49,12 @@
             <span class="pulse-dot"></span>
             众包投票驱动的 AI 商业能力雷达
           </div>
-          <h1 id="hero-title">把商业世界映射成一颗会发光的 AI 能力星球。</h1>
+          <h1 id="hero-title">把商业世界映射成一个可投票染色的 AI 能力立方体。</h1>
           <p class="hero-lede">
-            CanIt 用行业层级、真实应用案例和社区投票，把 AI 在各个商业场景中的能力进展以渐变星图呈现：能做、部分能做、暂时不能做，都保留前沿的不确定性。
+            CanIt 用行业、产品、价值链三条轴，把 AI 在商业场景里的能力进展呈现为半透明三维网格：哪些格子被 AI 点亮、点亮到什么深度，都由投票持续更新。
           </p>
           <div class="hero-actions">
-            <a class="primary-button" href="#arena">探索行业星球</a>
+            <a class="primary-button" href="#arena">探索能力立方体</a>
             <a class="secondary-button" href="#method">了解评分方式</a>
           </div>
           <div class="signal-row" aria-label="平台关键指标">
@@ -94,33 +94,33 @@
 
       <section id="arena" class="arena-section" aria-labelledby="arena-title">
         <div class="section-heading">
-          <span class="section-kicker">3D INDUSTRY SPHERE</span>
-          <h2 id="arena-title">行业能力球体</h2>
+          <span class="section-kicker">3D CAPABILITY CUBE</span>
+          <h2 id="arena-title">行业 × 产品 × 价值链能力立方体</h2>
           <p>
-            每个光点代表一个四级行业 / 任务场景。颜色越接近青紫，AI 越成熟；越接近琥珀和红色，说明仍处在人工主导或高不确定状态。
+            每个染色格子代表一个“行业层级 × 产品形态 × 价值链应用场景”的交叉点。颜色表达能力成熟度，透明度预留给投票数量：票数越多，格子越实。
           </p>
         </div>
         <div class="arena-layout">
-          <div class="sphere-shell">
-            <canvas id="industrySphere" width="920" height="720" aria-label="AI 商业应用行业三维球体"></canvas>
-            <div class="sphere-core">
-              <strong>CanIt</strong>
-              <span>Capability Atlas</span>
+          <div class="cube-shell">
+            <canvas id="capabilityCube" width="920" height="720" aria-label="AI 商业应用三维能力立方体"></canvas>
+            <div class="cube-core">
+              <strong>X·Y·Z</strong>
+              <span>Capability Cube</span>
             </div>
           </div>
-          <div class="insight-panel" id="industryDetail" aria-live="polite">
-            <span class="detail-label">当前选中</span>
-            <h3>金融服务 · 零售银行 · 风控 · 反欺诈预警</h3>
+          <div class="insight-panel" id="cubeDetail" aria-live="polite">
+            <span class="detail-label">当前格子</span>
+            <h3>1AaⅠ × P1 × V5</h3>
             <p>
-              社区认为该场景已经能稳定辅助分析，但最终决策仍需要合规与人工复核。投票分布呈现“可用但边界模糊”的渐变状态。
+              行业四级分类、产品形态和价值链场景交叉后形成一个能力格子。AI 能做的格子会被染色，染色深度后续由投票数量驱动。
             </p>
-            <div class="confidence-meter" aria-label="能力置信度 74%">
+            <div class="confidence-meter" aria-label="能力成熟度 74%">
               <span style="width: 74%"></span>
             </div>
             <dl class="detail-stats">
-              <div><dt>能力分</dt><dd>74</dd></div>
-              <div><dt>投票数</dt><dd>1,284</dd></div>
-              <div><dt>趋势</dt><dd>+12%</dd></div>
+              <div><dt>行业</dt><dd>1AaⅠ</dd></div>
+              <div><dt>产品</dt><dd>P1</dd></div>
+              <div><dt>投票</dt><dd>1,284</dd></div>
             </dl>
           </div>
         </div>
@@ -180,18 +180,26 @@
       <section id="taxonomy" class="taxonomy-section" aria-labelledby="taxonomy-title">
         <div class="section-heading compact">
           <span class="section-kicker">FOUR-LEVEL BUSINESS MAP</span>
-          <h2 id="taxonomy-title">覆盖商业世界的多级行业骨架</h2>
-          <p>示例结构可继续扩展到更完整的国民经济行业分类、职业任务库和企业流程库。</p>
+          <h2 id="taxonomy-title">行业维度代码骨架</h2>
+          <p>当前先用阿拉伯数字表示一级行业，大写字母表示二级，小写字母表示三级，罗马数字表示四级；后续可直接替换为你上传的固定行业分类。</p>
         </div>
-        <div class="taxonomy-map" id="taxonomyMap"></div>
+        <div class="dimension-layout">
+          <div class="taxonomy-map" id="taxonomyMap"></div>
+          <aside class="dimension-sidecar">
+            <h3>Y · 产品维度</h3>
+            <ul id="productDimensionList"></ul>
+            <h3>Z · 价值链场景</h3>
+            <ul class="compact-list" id="valueChainList"></ul>
+          </aside>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>CanIt · AI 能力边界不是线，而是一片正在移动的星云。</span>
+      <span>CanIt · AI 能力边界不是线，而是一个持续被投票染色的三维商业网格。</span>
       <a href="#top">回到顶部</a>
     </footer>
 
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
